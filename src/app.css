@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------
+   Global Styles & Custom Utilities
+   ------------------------------------------------------------ */
+
+@layer base {
+  /* Apply a soft background and primary font */
+  body {
+@apply bg-gray-900 font-sans text-white antialiased;
+    line-height: 1.6;
+    /* Subtle gradient overlay for a premium feel */
+    background: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism card */
+  .glass {
+    @apply backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow-lg;
+  }
+  /* Smooth scroll behavior */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom color palette – coffee theme */
+:root {
+  --color-coffee-100: #f3e5d8;
+  --color-coffee-200: #e6cdb3;
+  --color-coffee-300: #d9b58e;
+  --color-coffee-400: #cc9d69;
+  --color-coffee-500: #bf8544; /* primary */
+  --color-coffee-600: #9c6b36;
+  --color-coffee-700: #795229;
+  --color-coffee-800: #56381c;
+  --color-coffee-900: #332010;
+}
+
+/* Example usage of coffee colors */
+.btn-primary {
+  @apply bg-[#bf8544] text-white font-semibold py-2 px-4 rounded hover:bg-[#9c6b36] transition-colors;
+}
+
+/* Ensure images are responsive */
+img {
+  @apply max-w-full h-auto rounded-md;
+}
