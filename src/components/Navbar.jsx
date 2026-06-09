@@ -1,29 +1,27 @@
-// src/components/Navbar.jsx
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Bars3Icon, XMarkIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from "@heroicons/react/24/outline";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../store/authSlice";
 
-const links = [
+const navLinks = [
   { to: "/", label: "Home" },
   { to: "/menu", label: "Menu" },
   { to: "/about", label: "About" },
-  { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  // Initialize dark mode based on existing class on <html>
   const [dark, setDark] = useState(document.documentElement.classList.contains("dark"));
+  const { loggedIn } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
-  // Keep <html> class in sync when dark changes
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  const toggleTheme = () => {
-    setDark(!dark);
-  };
+  const toggleTheme = () => setDark(!dark);
 
   return (
     <nav className="glass bg-white/30 dark:bg-stone-900/30 shadow-md fixed w-full z-10">
@@ -34,26 +32,46 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop menu */}
-        <div className="hidden md:flex space-x-4 items-center">
-          {links.map((l) => (
-            <Link key={l.to} to={l.to} className="nav-link">
-              {l.label}
+        <div className="hidden md:flex space-x-6 items-center">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="nav-link text-gray-800 dark:text-gray-200 hover:text-coffee-600 transition-colors"
+            >
+              {link.label}
             </Link>
           ))}
-          <Link to="/contact" className="ml-4 btn-premium nav-link">
-            Book a Table
-          </Link>
+          {loggedIn ? (
+            <button
+              onClick={() => dispatch(logout())}
+              className="ml-4 btn-premium bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-lg px-4 py-2 hover:shadow-lg transition"
+            >
+              Logout
+            </button>
+          ) : (
+            <div className="flex items-center space-x-3 ml-4 border-l border-gray-300 dark:border-gray-700 pl-4">
+              <Link
+                to="/login"
+                className="text-gray-800 dark:text-gray-200 font-medium hover:text-coffee-600 transition"
+              >
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                className="btn-premium bg-coffee-600 hover:bg-coffee-700 text-white rounded-lg px-4 py-2 hover:shadow-lg transition font-medium"
+              >
+                Sign Up
+              </Link>
+            </div>
+          )}
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
             className="ml-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-stone-700"
             aria-label="Toggle theme"
           >
-            {dark ? (
-              <MoonIcon className="h-6 w-6 text-white" />
-            ) : (
-              <SunIcon className="h-6 w-6 text-yellow-500" />
-            )}
+            {dark ? <MoonIcon className="h-6 w-6 text-white" /> : <SunIcon className="h-6 w-6 text-yellow-500" />}
           </button>
         </div>
 
@@ -64,35 +82,49 @@ export default function Navbar() {
             aria-label="Toggle menu"
             className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
-            {open ? (
-              <XMarkIcon className="h-6 w-6" />
-            ) : (
-              <Bars3Icon className="h-6 w-6" />
-            )}
+            {open ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-white dark:bg-stone-800 pb-4 glass">
-          {links.map((l) => (
+        <div className="md:hidden bg-white dark:bg-stone-800 glass pb-4">
+          {navLinks.map((link) => (
             <Link
-              key={l.to}
-              to={l.to}
+              key={link.to}
+              to={link.to}
               className="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-stone-700"
               onClick={() => setOpen(false)}
             >
-              {l.label}
+              {link.label}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            className="block px-4 py-2 mt-2 btn-premium"
-            onClick={() => setOpen(false)}
-          >
-            Book a Table
-          </Link>
+          {loggedIn ? (
+            <button
+              onClick={() => { dispatch(logout()); setOpen(false); }}
+              className="block w-full text-left px-4 py-2 mt-2 btn-premium bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-lg"
+            >
+              Logout
+            </button>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                className="block px-4 py-2 mt-2 text-gray-800 dark:text-gray-200 font-medium"
+                onClick={() => setOpen(false)}
+              >
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                className="block px-4 py-2 mt-2 btn-premium bg-coffee-600 hover:bg-coffee-700 text-white rounded-lg font-medium"
+                onClick={() => setOpen(false)}
+              >
+                Sign Up
+              </Link>
+            </>
+          )}
           {/* Mobile theme toggle */}
           <button
             onClick={toggleTheme}
