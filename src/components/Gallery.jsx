@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const images = [
-  { src: 'https://images.unsplash.com/photo-1495474472204-51ece6f691ba?auto=format&fit=crop&w=800&q=80', alt: 'Coffee Beans', className: 'md:col-span-2 md:row-span-2' },
-  { src: 'https://images.unsplash.com/photo-1559925393-8be0ab4a6b8b?auto=format&fit=crop&w=800&q=80', alt: 'Cafe Interior', className: 'md:col-span-1 md:row-span-1' },
-  { src: 'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=800&q=80', alt: 'Latte Art', className: 'md:col-span-1 md:row-span-1' },
-  { src: 'https://images.unsplash.com/photo-1525648199074-ceeeace8225e?auto=format&fit=crop&w=800&q=80', alt: 'Friends Gathering', className: 'md:col-span-2 md:row-span-1' },
+  { src: '/images/gallery_beans_1780986077348.png', alt: 'Coffee Beans', className: 'md:col-span-2 md:row-span-2' },
+  { src: '/images/hero_bg_1780986040381.png', alt: 'Cafe Interior', className: 'md:col-span-1 md:row-span-1' },
+  { src: '/images/gallery_latte_1780986090316.png', alt: 'Latte Art', className: 'md:col-span-1 md:row-span-1' },
+  { src: '/images/gallery_friends_1780986119375.png', alt: 'Friends Gathering', className: 'md:col-span-2 md:row-span-1' },
 ];
 
 const Gallery = () => {

@@ -17,7 +17,7 @@ const About = () => {
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=800&q=80" 
+                src="/images/about_pouring_1780986064901.png" 
                 alt="Pouring coffee at DJ Coffee & Cafe" 
                 className="w-full h-full object-cover"
               />

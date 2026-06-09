@@ -6,14 +6,14 @@ import * as FiIcons from 'react-icons/fi';
 const menuCategories = ['All', 'Coffee', 'Cold Drinks', 'Food & Snacks'];
 
 const menuItems = [
-  { id: 1, name: 'Café Latte', desc: 'Espresso with steamed milk and a light layer of foam.', price: 'Rs. 150', category: 'Coffee', img: 'https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=600&q=80' },
-  { id: 2, name: 'Cappuccino', desc: 'Equal parts espresso, steamed milk, and milk foam.', price: 'Rs. 160', category: 'Coffee', img: 'https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80' },
-  { id: 3, name: 'Espresso', desc: 'Strong, concentrated coffee served in a small shot.', price: 'Rs. 100', category: 'Coffee', img: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=600&q=80' },
-  { id: 4, name: 'Cold Coffee', desc: 'Blended iced coffee with milk and vanilla ice cream.', price: 'Rs. 180', category: 'Cold Drinks', img: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80' },
-  { id: 5, name: 'Mojito Mocktail', desc: 'Refreshing mint, lime, and soda water blend.', price: 'Rs. 200', category: 'Cold Drinks', img: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=600&q=80' },
-  { id: 6, name: 'Fresh Lassi', desc: 'Traditional creamy yogurt-based sweet drink.', price: 'Rs. 120', category: 'Cold Drinks', img: 'https://images.unsplash.com/photo-1526424382096-74a93e105682?auto=format&fit=crop&w=600&q=80' },
-  { id: 7, name: 'Grilled Chicken Nanglo Set', desc: 'Our signature special platter with authentic flavors.', price: 'Rs. 450', category: 'Food & Snacks', img: 'https://images.unsplash.com/photo-1598515322675-9bea23f4856b?auto=format&fit=crop&w=600&q=80' },
-  { id: 8, name: 'Bakery Items', desc: 'Fresh daily selection of croissants and muffins.', price: 'Rs. 150+', category: 'Food & Snacks', img: 'https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=600&q=80' },
+  { id: 1, name: 'Café Latte', desc: 'Espresso with steamed milk and a light layer of foam.', price: 'Rs. 150', category: 'Coffee', img: '/images/gallery_latte_1780986090316.png' },
+  { id: 2, name: 'Cappuccino', desc: 'Equal parts espresso, steamed milk, and milk foam.', price: 'Rs. 160', category: 'Coffee', img: '/images/gallery_latte_1780986090316.png' },
+  { id: 3, name: 'Espresso', desc: 'Strong, concentrated coffee served in a small shot.', price: 'Rs. 100', category: 'Coffee', img: '/images/gallery_beans_1780986077348.png' },
+  { id: 4, name: 'Cold Coffee', desc: 'Blended iced coffee with milk and vanilla ice cream.', price: 'Rs. 180', category: 'Cold Drinks', img: '/images/about_pouring_1780986064901.png' },
+  { id: 5, name: 'Mojito Mocktail', desc: 'Refreshing mint, lime, and soda water blend.', price: 'Rs. 200', category: 'Cold Drinks', img: '/images/about_pouring_1780986064901.png' },
+  { id: 6, name: 'Fresh Lassi', desc: 'Traditional creamy yogurt-based sweet drink.', price: 'Rs. 120', category: 'Cold Drinks', img: '/images/about_pouring_1780986064901.png' },
+  { id: 7, name: 'Grilled Chicken Nanglo Set', desc: 'Our signature special platter with authentic flavors.', price: 'Rs. 450', category: 'Food & Snacks', img: '/images/gallery_friends_1780986119375.png' },
+  { id: 8, name: 'Bakery Items', desc: 'Fresh daily selection of croissants and muffins.', price: 'Rs. 150+', category: 'Food & Snacks', img: '/images/gallery_beans_1780986077348.png' },
 ];
 
 const Menu = () => {

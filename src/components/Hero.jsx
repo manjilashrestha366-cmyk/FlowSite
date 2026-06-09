@@ -11,7 +11,7 @@ const Hero = ({ onOpenReservation }) => {
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
       >
         <img
-          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=2000&q=80"
+          src="/images/hero_bg_1780986040381.png"
           alt="DJ Coffee & Cafe Interior"
           className="w-full h-full object-cover"
         />
